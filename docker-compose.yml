@@ -1,0 +1,33 @@
+version: "3"
+services:
+   db:
+      image: mysql:8.0
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: xoops
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: password
+          MYSQL_ALLOW_EMPTY_PASSWORD: 1
+          HOST: mysql
+      ports:
+        - 3336:3306
+   xoops:
+     image: xoopstest
+     restart: always
+     ports:
+      - "8080:80"
+     depends_on:
+       - db
+   phpmyadmin:
+       image: phpmyadmin/phpmyadmin
+       ports:
+         - '8181:80'
+       environment:
+         MYSQL_ROOT_PASSWORD: 'password'
+         MYSQL_PASSWORD: 'password'
+         MYSQL_USER: 'admin'
+         MYSQL_ALLOW_EMPTY_PASSWORD: 1
+       depends_on:
+         - db
