@@ -61,7 +61,7 @@ WORKDIR /var/www/html
 ENV XOOPS_VERSION mysql8
 
 RUN apt-get update \
-    && apt-get install -y git wget unzip libpng-dev libjpeg-progs libvpx-dev \
+    && apt-get install -y git nano wget unzip libpng-dev libjpeg-progs libvpx-dev \
     && docker-php-ext-install mysqli gd exif \
     && apt-get clean all \
 	&& git clone --branch ${XOOPS_VERSION} --depth 1 https://github.com/geekwright/XoopsCore25.git \
