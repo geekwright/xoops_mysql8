@@ -1,5 +1,5 @@
 # https://www.xoops.org/
-FROM php:7.3-rc-apache
+FROM php:7.3-apache
 
 # install the PHP extensions we need
 RUN set -ex; \
@@ -58,7 +58,7 @@ WORKDIR /var/www/html
 
 # https://github.com/XOOPS/XoopsCore25/releases
 # ENV XOOPS_VERSION v2.5.9
-ENV XOOPS_VERSION mysql8
+ENV XOOPS_VERSION master
 
 RUN apt-get update \
     && apt-get install -y git nano wget unzip libpng-dev libjpeg-progs libvpx-dev \

@@ -3,7 +3,7 @@
 Features
 - geekwright/XoopsCore25 mysql8
 - Apache
-- PHP 7.3 RC5
+- PHP 7.3
 - MySQL 8.0
 
 ```
