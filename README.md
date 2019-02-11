@@ -15,7 +15,7 @@ Apache is exposed on localhost:8080
 phpMyAdmin is available on localhost:8181
 
 When installing XOOPS using this image, in the Database setup use these values:
-- hostname "db" (not localhost)
-- user "admin"
-- password "password"
-- database "xoops"
+- Database: "xoops"
+- Server hostname: "db" (not localhost)
+- User name: "admin"
+- Password: "password"
